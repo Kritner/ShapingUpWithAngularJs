@@ -18,6 +18,15 @@
         };
     });
 
+    app.controller("ReviewController", function () {
+        this.review = {};
+
+        this.addReview = function (product) {
+            product.reviews.push(this.review);
+            this.review = {};
+        };
+    });
+
     var gems = [
         {
             name: 'Dodecohedron',
@@ -33,6 +42,23 @@
                 {
                     full: 'dodecohedron-02-full.jpg',
                     thumb: 'dodecohedron-02-thumb.jpg'
+                }
+            ],
+            reviews: [
+                {
+                    stars: 5,
+                    body: 'the best! the best! the best! the best! the best! the best! the best! the best!',
+                    author: 'dgrohl@gmail.com'
+                },
+                {
+                    stars: 4,
+                    body: "People don't think the universe be like it is, but it do.",
+                    author: 'ntyson@gmail.com'
+                },
+                {
+                    stars: 1,
+                    body: "this gem is terribad.  C'THULU FHTAGN",
+                    author: "defNotCthulu@gmail.com"
                 }
             ]
         },
