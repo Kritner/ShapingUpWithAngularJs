@@ -15,15 +15,11 @@
 
     <ul class="list-group" ng-controller="StoreController as store">
         <li class="list-group-item" ng-repeat="product in store.products">
-            <h3>
-                {{product.name}}
-                <em class="pull-right"> {{product.price | currency }} </em>
-                <img ng-src="{{product.images[0].full}}" />
-            </h3>
-
+            <h3><product-title></product-title></h3>
+            
             <section ng-controller="PanelController as panel">
                 <ul class="nav nav-pills">
-                    <li ng-class="{ active: panel.isSelected(1) }"> 
+                    <li ng-class="{ active: panel.isSelected(1) }">
                         <a href ng-click="panel.selectTab(1)"> Description </a>
                     </li>
                     <li ng-class="{ active: panel.isSelected(2) }">
